@@ -4,10 +4,10 @@ import com.IvanLarsson.models.Car;
 import com.IvanLarsson.models.Room;
 import com.IvanLarsson.util.Structs;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static com.IvanLarsson.util.ConsolePrints.printCommands;
-import static com.IvanLarsson.util.ConsolePrints.printCurrentInfo;
+import static com.IvanLarsson.util.ConsolePrints.*;
 
 public class MainController {
     private Scanner scanner = new Scanner(System.in);
@@ -20,18 +20,44 @@ public class MainController {
     }
 
     private void initialize() {
+        int roomWidth = 0;
+        int roomHeight = 0;
+        int xPos = 0;
+        int yPos = 0;
+        char dir = 0;
+        Structs.Orientation startDir = null;
+
         System.out.println("Enter size of room " +
                 "( X Y,  separate by space) eg. 5 5");
-        int roomWidth = scanner.nextInt();
-        int roomHeight = scanner.nextInt();
+
+
+        try {
+            roomWidth = scanner.nextInt();
+            roomHeight = scanner.nextInt();
+        }
+        catch(InputMismatchException e) {
+           // e.printStackTrace();
+            System.out.println("Bad input type, try again");
+            scanner.nextLine();
+            initialize();
+
+        }
 
         System.out.println("Enter X position, y position and start direction " +
                 "( X Y D,  separate by space) eg. 2 4 N");
 
-        int xPos = scanner.nextInt();
-        int yPos = scanner.nextInt();
-        char dir = scanner.next().charAt(0);
-        Structs.Orientation startDir = null;
+        try {
+            xPos = scanner.nextInt();
+            yPos = scanner.nextInt();
+            dir = scanner.next().charAt(0);
+        }
+        catch(InputMismatchException e) {
+            //e.printStackTrace();
+            System.out.println("Bad input type, try again");
+            scanner.nextLine();
+            initialize();
+        }
+
 
 
         switch (dir){
@@ -69,10 +95,7 @@ public class MainController {
     private void run(){
         boolean running = true;
 
-        System.out.println("******************************** Start Info ********************************");
-        printCurrentInfo(car, room);
-        printCommands();
-        System.out.println("Enter command:");
+        printStartInfo(car, room);
 
         while (true){
             if(!running){
@@ -112,6 +135,7 @@ public class MainController {
                         break;
                     case 'Z':
                         initialize();
+                        printStartInfo(car, room);
                         break;
                     default:
                         System.out.println("Bad command, try again");

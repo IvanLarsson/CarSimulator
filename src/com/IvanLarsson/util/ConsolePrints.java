@@ -41,4 +41,11 @@ public class ConsolePrints {
         System.out.println("    X: Quits simulation and prints results");
         System.out.println("******************************************************************************");
     }
+
+    public static void printStartInfo(Car c, Room r){
+        System.out.println("******************************** Start Info ********************************");
+        printCurrentInfo(c, r);
+        printCommands();
+        System.out.println("Enter command:");
+    }
 }

@@ -11,12 +11,12 @@ public class Car {
 
     private boolean isAlive;
 
-    public Car(int xPos, int yPos, Room t, Structs.Orientation direction) {
+    public Car(int xPos, int yPos, Room room, Structs.Orientation direction) {
         playerPos[0] = xPos;
         playerPos[1] = yPos;
 
         this.direction = direction;
-        this.room = t;
+        this.room = room;
 
         // Check if starting pos a possible
         if (room.isMovePossible(playerPos)) isAlive = true;
@@ -30,36 +30,39 @@ public class Car {
 
     public void move(Structs.Move m){
         if (!isAlive) return; // No need to move the car if the car has crashed
+        int[] newPos = {playerPos[0], playerPos[1]};
 
         switch (direction){
             case NORTH:
                 if (m == Structs.Move.FORWARD)
-                    playerPos[1] += 1;
+                    newPos[1] += 1;
                 else
-                    playerPos[1] -= 1;
+                    newPos[1] -= 1;
                 break;
             case SOUTH:
                 if (m == Structs.Move.FORWARD)
-                    playerPos[1] -= 1;
+                    newPos[1] -= 1;
                 else
-                    playerPos[1] += 1;
+                    newPos[1] += 1;
                 break;
             case WEST:
                 if (m == Structs.Move.FORWARD)
-                    playerPos[0] -= 1;
+                    newPos[0] -= 1;
                 else
-                    playerPos[0] += 1;
+                    newPos[0] += 1;
                 break;
             case EAST:
                 if (m == Structs.Move.FORWARD)
-                    playerPos[0] += 1;
+                    newPos[0] += 1;
                 else
-                    playerPos[0] -= 1;
+                    newPos[0] -= 1;
                 break;
         }
 
-        if (!room.isMovePossible(playerPos)){
+        if (!room.isMovePossible(newPos)){
             isAlive = false;
+        } else {
+            playerPos = newPos;
         }
     }
 
@@ -71,14 +74,12 @@ public class Car {
                     direction = Structs.Orientation.EAST;
                 else
                     direction = Structs.Orientation.WEST;
-
                 break;
             case SOUTH:
                 if (rot == Structs.Turn.RIGHT)
                     direction = Structs.Orientation.WEST;
                 else
                     direction = Structs.Orientation.EAST;
-
                 break;
             case WEST:
                 if (rot == Structs.Turn.RIGHT)
@@ -99,21 +100,8 @@ public class Car {
         return direction;
     }
 
-
-    public boolean isAlive() {
+    public boolean isAlive(){
         return isAlive;
-    }
-
-    /**
-     * Gets a string if the car is still in alive or not
-     * @return
-     */
-    public String getOnBoardStatus(){
-        if(isAlive){
-            return "The car is still alive :)";
-        } else {
-            return "The car has crashed :(";
-        }
     }
 
     public String getPosition(){
