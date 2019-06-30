@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cfd316b-4187-47cc-83ee-453f200e2db3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/IvanLarsson/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/IvanLarsson/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/IvanLarsson/models/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/IvanLarsson/models/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/IvanLarsson/util/ConsolePrints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/IvanLarsson/util/ConsolePrints.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,10 +29,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/IvanLarsson/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
+            <state relative-caret-position="-644">
               <caret line="89" column="25" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -58,11 +56,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/IvanLarsson/models/Car.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-428">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="288">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.classpath">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.project">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -104,10 +116,10 @@
         <option value="$PROJECT_DIR$/src/com/IvanLarsson/app/Main.java" />
         <option value="$PROJECT_DIR$/src/com/IvanLarsson/models/Room.java" />
         <option value="$PROJECT_DIR$/src/com/IvanLarsson/util/Structures.java" />
-        <option value="$PROJECT_DIR$/src/com/IvanLarsson/models/Car.java" />
         <option value="$PROJECT_DIR$/src/com/IvanLarsson/util/Structs.java" />
         <option value="$PROJECT_DIR$/src/com/IvanLarsson/util/ConsolePrints.java" />
         <option value="$PROJECT_DIR$/src/com/IvanLarsson/controllers/MainController.java" />
+        <option value="$PROJECT_DIR$/src/com/IvanLarsson/models/Car.java" />
       </list>
     </option>
   </component>
@@ -230,14 +242,14 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39761648" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39761648" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -281,16 +293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/IvanLarsson/models/Car.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-428">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/IvanLarsson/util/ConsolePrints.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -303,11 +305,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/IvanLarsson/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
+        <state relative-caret-position="-644">
           <caret line="89" column="25" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/IvanLarsson/models/Car.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.classpath">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.project">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
