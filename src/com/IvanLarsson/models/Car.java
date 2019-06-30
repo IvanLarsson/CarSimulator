@@ -28,6 +28,20 @@ public class Car {
 
     }
 
+    /**
+     * Moves player forward or backwards depending on direction
+     *
+     * Formula for counting how to move:
+     * N = North, S = South, W = West, E = East
+     * F = Forward, B = Backward
+     *
+     * N: F = yPos + 1, B = yPos - 1
+     * S: F = yPos - 1, B = yPos + 1
+     * W: F = xPos - 1, B = xPos + 1
+     * E: F = xPos + 1, B = xPos - 1
+     *
+     * @param m, if forward or backward
+     */
     public void move(Structs.Move m){
         if (!isAlive) return; // No need to move the car if the car has crashed
         int[] newPos = {playerPos[0], playerPos[1]};
