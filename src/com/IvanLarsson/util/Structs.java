@@ -1,5 +1,8 @@
 package com.IvanLarsson.util;
 
+/***
+ * Class simple class for collection of enums
+ */
 public class Structs {
     public enum Orientation {
         NORTH,
