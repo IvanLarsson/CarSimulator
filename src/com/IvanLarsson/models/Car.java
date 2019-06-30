@@ -11,6 +11,13 @@ public class Car {
 
     private boolean isAlive;
 
+    /***
+     * Constructor for Car object
+     * @param xPos Starting position for X
+     * @param yPos Starting position for Y
+     * @param room
+     * @param direction Starting direction
+     */
     public Car(int xPos, int yPos, Room room, Structs.Orientation direction) {
         playerPos[0] = xPos;
         playerPos[1] = yPos;
@@ -20,11 +27,7 @@ public class Car {
 
         // Check if starting pos a possible
         if (room.isMovePossible(playerPos)) isAlive = true;
-        else{
-            playerPos[0] = -1;
-            playerPos[1] = -1;
-            isAlive = false;
-        }
+        else isAlive = false;
 
     }
 
@@ -80,6 +83,10 @@ public class Car {
         }
     }
 
+    /***
+     * Rotates the Car
+     * @param rot , if turn is Right or Left
+     */
     public void turn(Structs.Turn rot){
         if (!isAlive) return; // No need to move the car if the car has crashed
         switch (direction){
