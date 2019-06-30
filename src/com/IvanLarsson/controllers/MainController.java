@@ -19,17 +19,20 @@ public class MainController {
         run();
     }
 
+    /***
+     * Initializes the simulation
+     * Enters the size of the room and the start position for the car
+     */
     private void initialize() {
         int roomWidth = 0;
         int roomHeight = 0;
         int xPos = 0;
         int yPos = 0;
-        char dir = 0;
+        String dir = "";
         Structs.Orientation startDir = null;
 
         System.out.println("Enter size of room " +
                 "( X Y,  separate by space) eg. 5 5");
-
 
         try {
             roomWidth = scanner.nextInt();
@@ -38,7 +41,7 @@ public class MainController {
         catch(InputMismatchException e) {
            // e.printStackTrace();
             System.out.println("Bad input type, try again");
-            scanner.nextLine();
+            scanner.nextLine(); // Skips to the next input
             initialize();
 
         }
@@ -49,32 +52,28 @@ public class MainController {
         try {
             xPos = scanner.nextInt();
             yPos = scanner.nextInt();
-            dir = scanner.next().charAt(0);
+            dir = scanner.nextLine()
+                    .replaceAll("\\W","")
+                    .toUpperCase();
         }
         catch(InputMismatchException e) {
             //e.printStackTrace();
             System.out.println("Bad input type, try again");
-            scanner.nextLine();
+            scanner.nextLine(); // Skips to the next input
             initialize();
         }
 
-
-
         switch (dir){
-            case 'N':
-            case 'n':
+            case "N":
                 startDir = Structs.Orientation.NORTH;
                 break;
-            case 'S':
-            case 's':
+            case "S":
                 startDir = Structs.Orientation.SOUTH;
                 break;
-            case 'W':
-            case 'w':
+            case "W":
                 startDir = Structs.Orientation.WEST;
                 break;
-            case 'E':
-            case 'e':
+            case "E":
                 startDir = Structs.Orientation.EAST;
                 break;
             default:
@@ -84,8 +83,9 @@ public class MainController {
         room = new Room(roomWidth, roomHeight);
         car = new Car(xPos, yPos, room, startDir);
 
+
         if (!car.isAlive() || startDir == null){
-            System.out.println("    Bad starting position!!! ");
+            System.out.println("    Bad starting position");
             System.out.println("    Reinitializing simulation ");
             initialize();
         }
@@ -138,7 +138,7 @@ public class MainController {
                         printStartInfo(car, room);
                         break;
                     default:
-                        System.out.println("Bad command, try again");
+                        System.out.println("A bad command was made: " + cmd + " , try again");
                         break;
                 }
             }
