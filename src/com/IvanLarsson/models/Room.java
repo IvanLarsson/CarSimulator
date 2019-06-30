@@ -3,12 +3,12 @@ package com.IvanLarsson.models;
 import java.util.Arrays;
 
 public class Room {
-    private int[] tableSize = new int[2];
+    private int[] RoomSize = new int[2];
 
 
     public Room(int width, int height) {
-        this.tableSize[0] = width;
-        this.tableSize[1] = height;
+        this.RoomSize[0] = width;
+        this.RoomSize[1] = height;
     }
 
     /**
@@ -17,14 +17,14 @@ public class Room {
      * @return
      */
     public boolean isMovePossible(int[] pos){
-        if ((pos[0] > tableSize[0] || pos[0] < 0) || (pos[1] > tableSize[1] || pos[1] < 0))
+        if ((pos[0] > RoomSize[0] || pos[0] < 0) || (pos[1] > RoomSize[1] || pos[1] < 0))
             return false;
         else
             return true;
     }
 
     public String getDimension(){
-        return Arrays.toString(tableSize);
+        return Arrays.toString(RoomSize);
     }
 
 }
